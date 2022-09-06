@@ -80,17 +80,16 @@ export default function App() {
     }
 
 
-//// Contract Deployment. 
-    const storeData = (inputVal) => {
-        contract.methods.set(inputVal).send({from: address});
+////// Contract Deployment. 
+    // IMPORTANT: async / await is essential to get values instead of Promise. 
+    const storeData = async (inputVal) => {
+        const res = await contract.methods.set(inputVal).send({from: address});
+        return res;
     }
 
-    const getData = () => {
-        return contract.methods.get().call()
-            .then((res) => {
-                console.log(res);
-            })
-            .catch((err) => console.log(err));
+    const getData = async () => {
+        const res = await contract.methods.get().call();
+        return res;
     }
 
 
@@ -103,19 +102,30 @@ export default function App() {
         }
     }
 
-    const RecordPush = (opr, val) => {
+    const RecordPush = (opr, val, detail) => {
         let stat = true;
-        if (val.length == 0){
+        let cost = 0;
+        if (val.length === 0){
             val = 'NA';
+            cost = 'NA';
             stat = false;
         }
-        
+        else{
+            if (opr === 'get'){
+                cost = 0;
+            }
+            else{
+                console.log(detail);    // show the details of transaction. 
+                cost = detail.gasUsed;
+            }
+        }
+
         const newRecord = {
             id: recordLen + 1, 
             address: address, 
             operation: opr, 
             value: val, 
-            cost: 1, 
+            cost: cost, 
             status: stat
         };
         if (recordLen == 0){
@@ -133,24 +143,26 @@ export default function App() {
 
 
 ////// store and get value. 
-    const storedValUpdate = () => {
+    const storedValUpdate = async () => {
         const inputVal = document.getElementById('inputVal').value;
         if (inputVal.length == 0) {
+            const detail = 'null';
             setStoredDone(false);
+            RecordPush('store', inputVal, detail);
         }
         else {
             setStoredVal(inputVal);
             setStoredDone(true);
             
-            storeData(inputVal);    // contract deployed. 
+            const detail = await storeData(inputVal);   // contract deployed. 
+            RecordPush('store', inputVal, detail);      // recorded. 
         }
-        RecordPush('store', inputVal);
     }
 
-    const showValUpdate = () => {
-        setShowVal(storedVal);
-        const ans = getData();
-        RecordPush('get', storedVal);
+    const showValUpdate = async () => {
+        const ans = await getData();
+        setShowVal(ans);
+        RecordPush('get', ans);
     }
 
 

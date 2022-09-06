@@ -14,7 +14,7 @@ export default function History(props){
                 <div className = "history-listAccount">Account</div>
                 <div className = "history-listOperation">Operation</div>
                 <div className = "history-listValue">Value</div>
-                <div className = "history-listCost">Cost (ETH)</div>
+                <div className = "history-listCost">Gas used (units)</div>
                 <div className = "history-listMenuStatus">Status</div>
             </div>
         )
