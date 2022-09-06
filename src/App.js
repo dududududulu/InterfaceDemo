@@ -30,10 +30,10 @@ export default function App() {
     const maxRecordLen = 50;                                    // maximum length of record list. 
 
     const navigate = useNavigate();
-
     const {ethereum} = window;
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
+    const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
 
     // useEffect(() => {
     //     const { ethereum } = window;
@@ -81,19 +81,11 @@ export default function App() {
 
 
 //// Contract Deployment. 
-    const getContract = () => {
-        // const web3 = new Web3(provider);
-        web3.eth.getAccounts(console.log);
-        return new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
-    }
-
     const storeData = (inputVal) => {
-        const contract = getContract();
         contract.methods.set(inputVal).send({from: address});
     }
 
     const getData = () => {
-        const contract = getContract();
         return contract.methods.get().call()
             .then((res) => {
                 console.log(res);
@@ -150,19 +142,14 @@ export default function App() {
             setStoredVal(inputVal);
             setStoredDone(true);
             
-            storeData(inputVal);
+            storeData(inputVal);    // contract deployed. 
         }
         RecordPush('store', inputVal);
     }
 
     const showValUpdate = () => {
         setShowVal(storedVal);
-        console.log('Show');
-        console.log(storedVal);
         const ans = getData();
-        console.log('check ans');
-        console.log(ans);
-        console.log(storedVal);
         RecordPush('get', storedVal);
     }
 

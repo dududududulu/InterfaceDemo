@@ -9,14 +9,14 @@ export default function History(props){
 
     const Menu = () => {
         return (
-                <div className = "history-menu">
-                    <div className = "history-listNumber">#</div>
-                    <div className = "history-listAccount">Account</div>
-                    <div className = "history-listOperation">Operation</div>
-                    <div className = "history-listValue">Value</div>
-                    <div className = "history-listCost">Cost (ETH)</div>
-                    <div className = "history-listMenuStatus">Status</div>
-                </div>
+            <div className = "history-menu">
+                <div className = "history-listNumber">#</div>
+                <div className = "history-listAccount">Account</div>
+                <div className = "history-listOperation">Operation</div>
+                <div className = "history-listValue">Value</div>
+                <div className = "history-listCost">Cost (ETH)</div>
+                <div className = "history-listMenuStatus">Status</div>
+            </div>
         )
     }
 
@@ -39,9 +39,7 @@ export default function History(props){
 
     const RecordDisplay = (propsDisplay) => {
         const curRecord = propsDisplay.record;
-        console.log(curRecord);
         const recordNum = props.recordLen - curRecord.id;
-        console.log(curRecord);
         return (
             <div className = "history-elementInner">
                 <div className = "history-listNumber">{curRecord.id}</div>
