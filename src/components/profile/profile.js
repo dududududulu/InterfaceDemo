@@ -43,7 +43,7 @@ export default function Profile(props){
             {
                 props.isConnected ?
                 <ProfilePage />:
-                <Navigate to = '/' />
+                <Navigate to = '/InterfaceDemo' />
             }
         </div>
     )

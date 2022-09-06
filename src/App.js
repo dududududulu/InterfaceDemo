@@ -1,11 +1,10 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import {useEffect, useState} from 'react';
+import {Routes, Route} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
+import {useState} from 'react';
 import {ethers} from 'ethers';
 import Web3 from "web3";
 
 import './App.css';
-import logo from './logo.svg';
 import Login from "./components/login/login";
 import Profile from "./components/profile/profile";
 import Storage from "./components/storage/storage";
@@ -23,8 +22,6 @@ export default function App() {
     const [storedVal, setStoredVal] = useState(0);              // value that is stored right now. 
     const [showVal, setShowVal] = useState(0);                  // value that is showed on screen. 
 
-    const [storeState, setStoreState] = useState(false);        // indicates store operation. 
-    const [getState, setGetState] = useState(false);            // indicates get operation. 
     const [historyRecord, setHistoryRecord] = useState(null);   // record of history operations. 
     const [recordLen, setRecordLen] = useState(0);              // length of record. 
     const maxRecordLen = 50;                                    // maximum length of record list. 
@@ -62,7 +59,7 @@ export default function App() {
             let balanceVal = await provider.getBalance(accounts[0]);
             let bal = ethers.utils.formatEther(balanceVal);
 
-            if (chainId == 0x3){
+            if (chainId === 0x3){
                 setNetwork('Ropsten Test Network');
             }
             else {
@@ -72,7 +69,7 @@ export default function App() {
             setBalance(bal);
             setIsConnected(true);
 
-            navigate('/profile');
+            navigate('/InterfaceDemo/profile');
         }
         catch (error){
             setIsConnected(false);
@@ -128,7 +125,7 @@ export default function App() {
             cost: cost, 
             status: stat
         };
-        if (recordLen == 0){
+        if (recordLen === 0){
             setHistoryRecord([newRecord, newRecord]);
         }
         else{
@@ -145,7 +142,7 @@ export default function App() {
 ////// store and get value. 
     const storedValUpdate = async () => {
         const inputVal = document.getElementById('inputVal').value;
-        if (inputVal.length == 0) {
+        if (inputVal.length === 0) {
             const detail = 'null';
             setStoredDone(false);
             RecordPush('store', inputVal, detail);
@@ -205,10 +202,10 @@ export default function App() {
         // <BrowserRouter>
             <div className="App">
                 <Routes>
-                    <Route path = "/" element = {<Login isHaveMetamask = {haveMetamask} connectTo = {connectWallet} />}></Route>
-                    <Route path = "/profile" element = {<ProfileDisplay/>}></Route>
-                    <Route path = "/storage" element = {<StorageDisplay/>}></Route>
-                    <Route path = "/history" element = {<HistoryDisplay/>}></Route>
+                    <Route path = "/InterfaceDemo" element = {<Login isHaveMetamask = {haveMetamask} connectTo = {connectWallet} />}></Route>
+                    <Route path = "/InterfaceDemo/profile" element = {<ProfileDisplay/>}></Route>
+                    <Route path = "/InterfaceDemo/storage" element = {<StorageDisplay/>}></Route>
+                    <Route path = "/InterfaceDemo/history" element = {<HistoryDisplay/>}></Route>
                 </Routes>
             </div>
         // </BrowserRouter>
