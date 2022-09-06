@@ -18,6 +18,7 @@ export default function App() {
     const [balance, setBalance] = useState(0);                  // balance of connected MetaMask account. 
     const [isConnected, setIsConnected] = useState(false);      // check if is connected to MetaMask account. 
 
+    const [storedPending, setStoredPending] = useState(false);        // check if a value is pending. 
     const [storedDone, setStoredDone] = useState(false);        // check if a value is stored. 
     const [storedVal, setStoredVal] = useState(0);              // value that is stored right now. 
     const [showVal, setShowVal] = useState(0);                  // value that is showed on screen. 
@@ -59,7 +60,8 @@ export default function App() {
             let balanceVal = await provider.getBalance(accounts[0]);
             let bal = ethers.utils.formatEther(balanceVal);
 
-            if (chainId === 0x3){
+            console.log(chainId);
+            if (chainId === '0x3'){
                 setNetwork('Ropsten Test Network');
             }
             else {
@@ -100,20 +102,33 @@ export default function App() {
     }
 
     const RecordPush = (opr, val, detail) => {
-        let stat = true;
+        let stat = 1;
         let cost = 0;
         if (val.length === 0){
             val = 'NA';
             cost = 'NA';
-            stat = false;
+            stat = 0;
         }
         else{
             if (opr === 'get'){
                 cost = 0;
+                stat = 1;
             }
             else{
-                console.log(detail);    // show the details of transaction. 
-                cost = detail.gasUsed;
+                if (detail === 'null'){
+                    setStoredPending(false);
+                    setStoredDone(true);
+                    console.log('Rejected');
+                    cost = 'NA';
+                    stat = 2;
+                }
+                else{
+                    setStoredDone(true);
+                    console.log('Done');
+                    console.log(detail);    // show the details of transaction. 
+                    cost = detail.gasUsed;
+                    stat = 1;
+                }
             }
         }
 
@@ -142,22 +157,33 @@ export default function App() {
 ////// store and get value. 
     const storedValUpdate = async () => {
         const inputVal = document.getElementById('inputVal').value;
+        setStoredPending(false);
+        setStoredDone(false);
+
         if (inputVal.length === 0) {
             const detail = 'null';
-            setStoredDone(false);
             RecordPush('store', inputVal, detail);
         }
         else {
+            setStoredPending(true);
             setStoredVal(inputVal);
-            setStoredDone(true);
             
-            const detail = await storeData(inputVal);   // contract deployed. 
-            RecordPush('store', inputVal, detail);      // recorded. 
+            try{
+                const detail = await storeData(inputVal);   // contract deployed. 
+                RecordPush('store', inputVal, detail);      // recorded. 
+            }
+            catch(err){
+                const detail = 'null';                      // no detail info. 
+                RecordPush('store', inputVal, detail);      // recorded. 
+            }
         }
     }
 
     const showValUpdate = async () => {
         const ans = await getData();
+        setStoredPending(false);
+        setStoredDone(false);
+
         setShowVal(ans);
         RecordPush('get', ans);
     }
@@ -182,6 +208,7 @@ export default function App() {
                 storeValHandle = {storedValUpdate} 
                 showValHandle = {showValUpdate} 
                 showVal = {showVal} 
+                storedPending = {storedPending}
                 storedDone = {storedDone}
             />
         )

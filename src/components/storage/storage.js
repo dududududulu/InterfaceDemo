@@ -12,7 +12,7 @@ export default function Storage(props){
                 <p>
                     &emsp;This is an introduction to this simple demo of applying blockchain contracts via web interface. 
                     Here a contract is applied for storing and checking value. 
-                    The contract file can be found at "~/contracts/SimpleStorage.sol". 
+                    The contract file can be found at "~/src/contracts/SimpleStorage.sol". 
                     <br/>
                     &emsp;Similar to what you see on REMIX, 
                     the functionality of the contract can be implemented with the buttons to the right. 
@@ -35,9 +35,21 @@ export default function Storage(props){
                         store
                     </button>
                     {
-                        props.storedDone ?
-                        <span>Done! </span> : 
-                        <span>Please try again. </span>
+                        props.storedPending ?
+                        <span>
+                            {
+                                props.storedDone ?
+                                <span>Done! </span>:
+                                <span>Pending... </span>
+                            }
+                        </span> : 
+                        <span>
+                            {
+                                props.storedDone ?
+                                <span>Rejected! </span>:
+                                <span>Please try again. </span>
+                            }
+                        </span>
                     }
                 </div>
             </div>
@@ -72,6 +84,7 @@ export default function Storage(props){
     const StoragePage = () => {
         return (
             <div className = "storage-background">
+                <h1>Function Page</h1>
                 <div className = "storage">
                     <FunctionIntro/>
                     <div className = "storage-vertLine">

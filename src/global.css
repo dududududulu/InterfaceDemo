@@ -13,7 +13,8 @@
     --TopbarColor: #61dafb;
 
     --ApprovedColor: #55EEAA;
-    --DeniedColor: #EF7788;
+    --InvalidColor: #EAEA67;
+    --RejectedColor: #EF7788;
 }
 
 .global-message{

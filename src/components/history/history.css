@@ -111,15 +111,22 @@
     font-size: 20px;
     width: 90%;
     text-align: center;
-    
     background-color: var(--ApprovedColor);
     color: var(--ApprovedColor);
 }
 
-.history-denied{
+.history-invalid{
     font-size: 20px;
     width: 90%;
     text-align: center;
-    background-color: var(--DeniedColor);
-    color: var(--DeniedColor);
+    background-color: var(--InvalidColor);
+    color: var(--InvalidColor);
+}
+
+.history-rejected{
+    font-size: 20px;
+    width: 90%;
+    text-align: center;
+    background-color: var(--RejectedColor);
+    color: var(--RejectedColor);
 }

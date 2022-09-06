@@ -37,6 +37,29 @@ export default function History(props){
     //     )
     // }
 
+
+    const RecordStatusDisplay = (propsStatus) => {
+        const curRecord = propsStatus.record;
+
+        if (curRecord.status === 1){
+            return (
+                <div className = "history-approved">A</div>
+            );
+        }
+        else{
+            if (curRecord.status === 0){
+                return (
+                    <div className = "history-invalid">I</div>
+                );
+            }
+            else{
+                return (
+                    <div className = "history-rejected">R</div>
+                );
+            }
+        }
+    }
+
     const RecordDisplay = (propsDisplay) => {
         const curRecord = propsDisplay.record;
         // const recordNum = props.recordLen - curRecord.id;
@@ -48,11 +71,7 @@ export default function History(props){
                 <div className = "history-listValue">{curRecord.value}</div>
                 <div className = "history-listCost">{curRecord.cost}</div>
                 <div className = "history-listStatus">
-                    {
-                        curRecord.status ?
-                        <div className = "history-approved">A</div>:
-                        <div className = "history-denied">D</div>
-                    }
+                    <RecordStatusDisplay record = {curRecord}/>
                 </div>
             </div>
         )
@@ -96,7 +115,6 @@ export default function History(props){
             <div className = "history-background">
                 <div className = "history">
                     <h1>History of Operations</h1>
-                    
                     <div className = "history-menuFramework">
                         <hr color = "black" width = "100%"/>
                         <Menu />
