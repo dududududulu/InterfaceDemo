@@ -1,0 +1,43 @@
+
+:root{
+    --BackgroundCovered: #282c34;
+    --BackgroundUncovered: white;
+    --BackgroundMasked: #E9E9E9;
+
+    --MessageColorCovered: white;
+    --MessageColorUncovered: black;
+    --MessageColorFooter: #fa7233;
+
+    --HighlightColor: yellow;
+    --KeyMessageColor: #ff2233;
+    --TopbarColor: #61dafb;
+
+    --ApprovedColor: #55EEAA;
+    --DeniedColor: #EF7788;
+}
+
+.global-message{
+    color: var(--KeyMessageColor);
+}
+
+.global-link{
+    color: #61dafb;
+}
+
+.global-btn{
+    font-size: 20px;
+    background-color: #61dafb;
+}
+
+.global-footer{
+    text-align: bottom;
+    font-size: 10px;
+    color: var(--MessageColorFooter);
+}
+
+.global-toolbar{
+    font-size: 20px;
+    text-align: center;
+    padding-top: 40px;
+    color: var(--MessageColorUncovered);
+}

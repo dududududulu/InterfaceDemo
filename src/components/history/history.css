@@ -1,0 +1,125 @@
+@import "../../global.css";
+
+.history-background{
+    text-align: center;
+    background-color: var(--BackgroundUncovered);
+    min-height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.history{
+    text-align: center;
+    background-color: var(--BackgroundUncovered);
+    width: 80%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.history-menuFramework{
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.history-menu{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.history-element{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.history-elementInner{
+    width: 100%;
+    display: flex;
+    padding-top: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.history-listNumber{
+    font-size: 20px;
+    width: 5%;
+    text-align: center;
+    color: var(--MessageColorUncovered);
+    background-color: var(--BackgroundMasked);
+}
+
+.history-listAccount{
+    font-size: 20px;
+    width: 44%;
+    text-align: center;
+    color: var(--MessageColorUncovered);
+}
+
+.history-listOperation{
+    font-size: 20px;
+    width: 10%;
+    text-align: center;
+    color: var(--MessageColorUncovered);
+    background-color: var(--BackgroundMasked);
+}
+
+.history-listValue{
+    font-size: 20px;
+    width: 14%;
+    text-align: center;
+    color: var(--MessageColorUncovered);
+}
+
+.history-listCost{
+    font-size: 20px;
+    width: 20%;
+    text-align: center;
+    color: var(--MessageColorUncovered);
+    background-color: var(--BackgroundMasked);
+}
+
+.history-listMenuStatus{
+    font-size: 20px;
+    width: 7%;
+    text-align: center;
+    color: var(--MessageColorUncovered);
+}
+
+.history-listStatus{
+    width: 7%;
+    display: flex;
+    justify-content: right;
+    color: var(--MessageColorUncovered);
+}
+
+.history-approved{
+    font-size: 20px;
+    width: 90%;
+    text-align: center;
+    
+    background-color: var(--ApprovedColor);
+    color: var(--ApprovedColor);
+}
+
+.history-denied{
+    font-size: 20px;
+    width: 90%;
+    text-align: center;
+    background-color: var(--DeniedColor);
+    color: var(--DeniedColor);
+}
