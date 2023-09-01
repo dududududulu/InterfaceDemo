@@ -64,6 +64,12 @@ export default function App() {
             if (chainId === '0x3'){
                 setNetwork('Ropsten Test Network');
             }
+            else if (chainId === '0x5'){
+                setNetwork('Goerli Test Network');
+            }
+            else if (chainId === '0xaa36a7'){
+                setNetwork('Sepolia Test Network');
+            }
             else {
                 setNetwork('Other Test Network');
             }

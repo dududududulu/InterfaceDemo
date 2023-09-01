@@ -41,7 +41,7 @@ export default function Login(props){
         <div className = "login">
             <img src = {logo} className = "login-logo" alt = "logo" />
             <h2>
-                22-23 Sem 1 EE4032 <br/>
+                23-24 Sem 1 EE4032 <br/>
                 Project Interface Demo
                 <br/>
                 <span className = "login-author">
