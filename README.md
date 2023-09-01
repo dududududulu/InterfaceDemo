@@ -264,7 +264,7 @@ The GitHub repository can be connected to a local folder and we can sync any cha
 ### Deploy and Post 
 Once you have finished your project, you have to publish the application to GitHub Pages instead of just running it locally at http://localhost:3000/. 
 
-- Source code of your application cannot directly be compiled and run on GitHub Pages. Follow steps listed [here](https://github.com/gitname/react-gh-pages) to deploy your React Dapp to GitHub Pages. 
+- Source code of your application cannot directly be compiled and run on GitHub Pages. Follow steps listed [here](https://github.com/gitname/react-gh-pages) to deploy your React Dapp to GitHub Pages. If you have already opened a repository, start from step 3; if you have deployed your project before, start from step 7. 
 - After that, you have to config your GitHub Pages to show your application. 
   - Go to your **project repository** and check if there is a branch named ```gh-pages```. 
     ![Git-gh-pages](https://i.postimg.cc/TPr0jFCV/Git-gh-pages.png)
@@ -299,7 +299,7 @@ This part gives the steps to clone the [demo code](https://github.com/dududududu
     npm install react-router-dom
     ```
   - Type ```npm start``` to run the application demo, and go to http://localhost:3000/InterfaceDemo/ to view the page. 
-    ![demo-login](https://i.postimg.cc/7YjzVsvL/demo-login.png)
+    ![demo-login](https://i.postimg.cc/hjrpTG1t/demo-login.png)
   - Now you can design your own application based on the framework of this demo! 
 
 
