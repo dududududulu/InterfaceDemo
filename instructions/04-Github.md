@@ -1,5 +1,5 @@
 
-# D. GitHub and GitHub Pages
+# 04. GitHub and GitHub Pages
 
 In previous sections, we opened project folder in VSCode and real-time changes will be compiled and run at http://localhost:3000/project-name. However, the web page can only work locally on your computer and when running ```npm start``` in terminal. In order to keep the application alive on any computer on the Internet and after your own computer is shut down, you have to publish your application on a server. Among all others, we recommend **GitHub Pages** as it is free and easy to play with. 
 

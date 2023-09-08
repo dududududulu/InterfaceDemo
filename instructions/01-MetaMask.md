@@ -1,5 +1,5 @@
 
-# A. MetaMask
+# 01. MetaMask
 
 This is an instruction on how to create an Ethereum wallet with your MetaMask account and try transactions on it. 
 

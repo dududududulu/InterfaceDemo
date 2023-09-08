@@ -1,5 +1,5 @@
 
-# B. Solidity and Remix
+# 02. Solidity and Remix
 
 MetaMask is sufficient to use ETH as a cryptocurrency - you can send and receive ETH. But to develop smart contracts and Dapps, you need more than that. 
 

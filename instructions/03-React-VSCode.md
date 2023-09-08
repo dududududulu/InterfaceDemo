@@ -1,5 +1,5 @@
 
-# C. React and VSCode
+# 03. React and VSCode
 
 With Solidity and Remix, we can create smart contracts. But in order to wrap the contracts into a Dapp and show its functionality more explicitly, we will need **React** to construct a web page as an interface. The [Project Interface Demo](https://dududududulu.github.io/InterfaceDemo/) you have seen before is an easy example and also a framework for you to work on. The source code can be found at [here](https://github.com/dududududulu/InterfaceDemo.git), but let's save it for later and set up the environment to use React first. 
 
