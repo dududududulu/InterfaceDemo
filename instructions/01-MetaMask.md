@@ -17,7 +17,7 @@ You should be able to see your account on top right side of your browser.
 1. Click on the button to the top left corner and switch your network from **Ethereum Mainnet** to **Sepolia Test Network**. 
 <img src="https://i.postimg.cc/Vsqb7Mjv/Meta-Mask-Sepolia.png" height="400"/>
 
-1. Next we have to put some Ethereum (ETH) in your account. Go to [Sepolia testnet faucet](https://sepoliafaucet.com/) to get some ETH for free (needs free sign up). You may need a Sepolia address to proceed, which is the address of your MetaMask account that can be copied from your account page. 
+1. Next we have to put some Ethereum (ETH) in your account. Go to [Sepolia testnet faucet](https://cloud.google.com/application/web3/faucet/ethereum/sepolia) to get some ETH for free. You may need a Sepolia address to proceed, which is the address of your MetaMask account that can be copied from your account page. 
 
 2. You should be able to see your ETH in your account after a short time. You can employ transactions between you and your friends with that. Go to [Etherscan](https://sepolia.etherscan.io/) and you can see your transaction history with your address (should be empty for a new account). 
 
