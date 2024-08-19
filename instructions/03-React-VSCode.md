@@ -18,7 +18,7 @@ First you have to download and install VSCode.
 There is actually an official tutorial to use [React in VSCode](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial). But the latest version of React packages does not include NodeJS polyfills that are necessary for building web3 Dapps, while the official tutorial did not mention it. So it is recommended that you follow the steps listed below here instead of the official tutorial. 
 
 - **Install necessary packages**
-  - Install [Node.js](https://github.com/npm/cli/releases/tag/v10.8.1), in which [npm](https://www.npmjs.com/) should be included. 
+  - Install [Node.js](https://nodejs.org/en/download/package-manager), in which [npm](https://www.npmjs.com/) should be included. 
   - To verify that you have Node.js installed correctly on your computer, open a terminal or command prompt and type ```node --version``` or ```npm --version``` to check the version. 
   - If installed correctly, you will see the following result:
   ![node-version](https://i.postimg.cc/fybVLSV3/node-version.png)
