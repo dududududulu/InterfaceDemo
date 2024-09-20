@@ -28,7 +28,66 @@ There is actually an official tutorial to use [React in VSCode](https://code.vis
     npx create-react-app project-name
     ```
     where ```project-name``` is the name of the folder of your application. This may take a few minutes so please wait patiently until it is done:
-    ![react-create](https://i.postimg.cc/28VqNvpM/react-create.png)
+    ```
+    Creating a new React app in C:\Users\ian_g\my-dapp.
+
+    Installing packages. This might take a couple of minutes.
+    Installing react, react-dom, and react-scripts with cra-template...
+
+
+    added 1480 packages in 1m
+
+    262 packages are looking for funding
+      run `npm fund` for details
+
+    Initialized a git repository.
+
+    Installing template dependencies using npm...
+
+    added 63 packages, and changed 1 package in 4s
+
+    262 packages are looking for funding
+      run `npm fund` for details
+    Removing template package using npm...
+
+
+    removed 1 package, and audited 1543 packages in 3s
+
+    262 packages are looking for funding
+      run `npm fund` for details
+
+    8 vulnerabilities (2 moderate, 6 high)
+
+    To address all issues (including breaking changes), run:
+      npm audit fix --force
+
+    Run `npm audit` for details.
+
+    Created git commit.
+
+    Success! Created my-dapp at C:\Users\ian_g\my-dapp
+    Inside that directory, you can run several commands:
+
+      npm start
+        Starts the development server.
+
+      npm run build
+        Bundles the app into static files for production.
+
+      npm test
+        Starts the test runner.
+
+      npm run eject
+        Removes this tool and copies build dependencies, configuration files
+        and scripts into the app directory. If you do this, you can’t go back!
+
+    We suggest that you begin by typing:
+
+      cd my-dapp
+      npm start
+
+    Happy hacking!
+    ```
 
   - Run your React application by navigating to your project folder in the terminal and type ```npm start``` to start the web server:
     ```
