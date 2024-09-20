@@ -102,8 +102,7 @@ There is actually an official tutorial to use [React in VSCode](https://code.vis
     cd project-name
     code .
     ```
-    You should be able to see the project files in VSCode window
-    ![react-vscode](https://i.postimg.cc/tgtJNNPZ/react-vscode.png)
+    You should be able to see the project files in VSCode window. 
 
   - Open file ```App.js``` in the folder ```project-name/src``` in VSCode, replace the tenth line with the following sentence and save the changes:
     ```
