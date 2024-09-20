@@ -18,10 +18,9 @@ First you have to download and install VSCode.
 There is actually an official tutorial to use [React in VSCode](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial). But the latest version of React packages does not include NodeJS polyfills that are necessary for building web3 Dapps, while the official tutorial did not mention it. So it is recommended that you follow the steps listed below here instead of the official tutorial. 
 
 - **Install necessary packages**
-  - Install [Node.js](https://nodejs.org/en/download/package-manager), in which [npm](https://www.npmjs.com/) should be included. 
+  - Install [Node.js](https://nodejs.org/en/), in which npm should be included. 
   - To verify that you have Node.js installed correctly on your computer, open a terminal or command prompt and type ```node --version``` or ```npm --version``` to check the version. 
-  - If installed correctly, you will see the following result:
-  ![node-version](https://i.postimg.cc/fybVLSV3/node-version.png)
+  - If installed correctly, you will see ```v20.17.0``` on the screen. 
 
 - **Create the React project**
   - You can now create a new React application by typing the following command:
@@ -54,12 +53,33 @@ There is actually an official tutorial to use [React in VSCode](https://code.vis
     You will see updates at http://localhost:3000/project-name as below
     ![react-helloworld](https://i.postimg.cc/DwG88Twc/react-helloworld.png)
   
-- **Add missing Nodejs polyfills to app**
+- **Add Web3 to your app**
   - To build a web3 application, we have to add the web3 dependency at the first line of ```App.js```:
     ```javascript
     import Web3 from "web3";
     ```
-    However, the latest version of ```create-react-app``` (>=5) does not include **NodeJS polyfills** necessary for web3 applications, so errors will occur if we add web3 to the app. So there are some more things we have to do. 
+    However, this is not naturally installed with node.js, so we have to install it in terminal:
+    ```
+    npm install web3
+    ```
+    After that, you may receive the following warnings, but your dapp will still be compiled successfully. 
+    Thus, we can just ignore these warnings about vulnerabilities since they will not affect your projects. 
+    More information on this issue can be found [here](https://github.com/facebook/create-react-app/issues/11174). 
+    ```
+    added 42 packages, and audited 1585 packages in 14s
+
+    268 packages are looking for funding
+      run `npm fund` for details
+
+    8 vulnerabilities (2 moderate, 6 high)
+
+    To address all issues (including breaking changes), run:
+      npm audit fix --force
+
+    Run `npm audit` for details.
+    ```
+    
+    <!-- However, the latest version of ```create-react-app``` (>=5) does not include **NodeJS polyfills** necessary for web3 applications, so errors will occur if we add web3 to the app. So there are some more things we have to do. 
     ![web3-error](https://i.postimg.cc/XJjJHBc2/web3-error.png)
 
   - Go to your app folder and install ```react-app-rewired``` and other missing modules:
@@ -115,7 +135,7 @@ There is actually an official tutorial to use [React in VSCode](https://code.vis
     To this end, missing Nodejs polyfills should be included and your app should be doing well with web3. To see this, add the following command to the first line of ```project-name/src/App.js``` and re-run ```npm start``` in your project folder. You should be able to see your app running instead of errors. 
     ```javascript
     import Web3 from "web3";
-    ```
+    ``` -->
 
 - **Other information you can turn to**
   - Tutorial to use React in VSCode: https://code.visualstudio.com/docs/nodejs/reactjs-tutorial
