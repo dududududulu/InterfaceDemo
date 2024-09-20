@@ -62,9 +62,7 @@ There is actually an official tutorial to use [React in VSCode](https://code.vis
     ```
     npm install web3
     ```
-    After that, you may receive the following warnings, but your dapp will still be compiled successfully. 
-    Thus, we can just ignore these warnings about vulnerabilities since they will not affect your projects. 
-    More information on this issue can be found [here](https://github.com/facebook/create-react-app/issues/11174). 
+    After that, you may receive the following warnings, but your dapp will still be compiled successfully. Thus, we can just ignore these warnings about vulnerabilities since they will not affect your projects. More information on this issue can be found [here](https://github.com/facebook/create-react-app/issues/11174). 
     ```
     added 42 packages, and audited 1585 packages in 14s
 
@@ -78,6 +76,14 @@ There is actually an official tutorial to use [React in VSCode](https://code.vis
 
     Run `npm audit` for details.
     ```
+    
+- **Other information you can turn to**
+  - Tutorial to use React in VSCode: https://code.visualstudio.com/docs/nodejs/reactjs-tutorial
+  - Troubleshooting for web3 probelm in latest version of ```create-react-app```: 
+    - https://github.com/web3/web3.js#web3-and-create-react-app. 
+    - https://github.com/facebook/create-react-app/issues/11174. 
+    - https://overreacted.io/npm-audit-broken-by-design/. 
+
     
     <!-- However, the latest version of ```create-react-app``` (>=5) does not include **NodeJS polyfills** necessary for web3 applications, so errors will occur if we add web3 to the app. So there are some more things we have to do. 
     ![web3-error](https://i.postimg.cc/XJjJHBc2/web3-error.png)
@@ -136,7 +142,3 @@ There is actually an official tutorial to use [React in VSCode](https://code.vis
     ```javascript
     import Web3 from "web3";
     ``` -->
-
-- **Other information you can turn to**
-  - Tutorial to use React in VSCode: https://code.visualstudio.com/docs/nodejs/reactjs-tutorial
-  - Troubleshooting for web3 probelm in latest version of ```create-react-app```: https://github.com/web3/web3.js#web3-and-create-react-app
