@@ -20,7 +20,7 @@ There is actually an official tutorial to use [React in VSCode](https://code.vis
 - **Install necessary packages**
   - Install [Node.js](https://nodejs.org/en/), in which npm should be included. 
   - To verify that you have Node.js installed correctly on your computer, open a terminal or command prompt and type ```node --version``` or ```npm --version``` to check the version. 
-  - If installed correctly, you will see ```v20.17.0``` on the screen. 
+  - If installed correctly, you will see ```v20.17.0``` on the screen if you type ```node --version``` and ```10.8.3``` for ```npm --version```. Make sure that your versions are correct, or your may get into trouble installing web3 into your project (details on this issue can be found [here](https://github.com/dududududulu/InterfaceDemo/issues/4)). 
 
 - **Create the React project**
   - You can now create a new React application by typing the following command:
